@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,11 +16,57 @@
 }
 
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 .grid-bg {
-  background-image: 
-    linear-gradient(rgba(124,109,250,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,109,250,0.04) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(124,109,250,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,109,250,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent2) 0%, #c4b5fd 50%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124,109,250,0.3); }
+  50% { box-shadow: 0 0 40px rgba(124,109,250,0.6); }
+}
+
+.float { animation: float 4s ease-in-out infinite; }
+
+.blog-card:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-2px);
 }

@@ -53,13 +53,10 @@ export default function BlogPage() {
               const color = CATEGORY_COLORS[article.category] || "var(--accent)";
               return (
                 <Link key={article.slug} href={`/blog/${article.slug}`} style={{ textDecoration: "none" }}>
-                  <div style={{
+                  <div className="blog-card" style={{
                     background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 12, padding: "1.25rem",
-                    transition: "border-color 0.2s",
-                  }}
-                    onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = color}
-                    onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border)"}
-                  >
+                    transition: "border-color 0.2s, transform 0.2s",
+                  }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                       <span style={{ fontSize: 11, background: `${color}22`, color, padding: "2px 10px", borderRadius: 99, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
                         <Tag size={11} />{article.category}
