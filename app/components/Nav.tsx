@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function Nav() {
   return (
@@ -22,22 +22,8 @@ export default function Nav() {
         alignItems: "center",
         justifyContent: "space-between",
       }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <div style={{
-            width: 32,
-            height: 32,
-            borderRadius: 9,
-            background: "linear-gradient(135deg, var(--accent), #c084fc)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            boxShadow: "0 0 16px rgba(124,109,250,0.4)",
-          }}>
-            <Sparkles size={16} color="#fff" />
-          </div>
-          <span style={{ fontWeight: 800, fontSize: 17, color: "var(--text)", letterSpacing: "-0.02em" }}>
-            AIツール集
-          </span>
+        <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <Image src="/logo.svg" alt="AI Tools Hub" width={160} height={40} style={{ objectFit: "contain" }} priority />
         </Link>
 
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
