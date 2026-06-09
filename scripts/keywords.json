@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "ai-report-jidou-seisaku",
+    "title": "AIでレポートを自動作成する方法｜業務効率化の完全ガイド",
+    "keyword": "AI レポート 自動作成",
+    "category": "レポート生成",
+    "description": "AIを使って週報・月次報告書を自動作成する具体的な方法を解説。中小企業の管理部門向け実践ガイド。"
+  },
+  {
+    "slug": "seizougyou-ai-tool-osusume",
+    "title": "製造業でおすすめのAIツール5選｜工場・生産管理に使える",
+    "keyword": "製造業 AI ツール おすすめ",
+    "category": "製造業",
+    "description": "製造業・工場での業務効率化に使えるAIツールを厳選して紹介。生産管理・品質管理・レポート作成に活用できる。"
+  },
+  {
+    "slug": "muryou-ai-tool-matome",
+    "title": "無料で使えるAIツールまとめ2025年版｜登録不要で今すぐ使える",
+    "keyword": "無料 AI ツール まとめ",
+    "category": "AIツール",
+    "description": "登録不要・無料で使えるAIツールを一覧で紹介。文章生成・翻訳・要約・画像生成など用途別に解説。"
+  },
+  {
+    "slug": "shuuhou-template-ai",
+    "title": "週報テンプレートをAIで自動生成｜コピペで使える例文付き",
+    "keyword": "週報 テンプレート AI 自動生成",
+    "category": "レポート生成",
+    "description": "週報をAIで自動作成する方法とすぐ使えるテンプレートを紹介。毎週の週報作成時間をゼロにする方法。"
+  },
+  {
+    "slug": "gaikokujin-roudousha-nihongo-tool",
+    "title": "外国人労働者向け日本語学習AIツール｜工場・製造業での活用法",
+    "keyword": "外国人労働者 日本語 AI ツール",
+    "category": "多言語・教育",
+    "description": "工場・製造業で働く外国人スタッフの日本語学習をAIでサポートする方法。ポルトガル語・ベトナム語対応ツールを紹介。"
+  },
+  {
+    "slug": "keieisha-mukete-ai-jidouka",
+    "title": "中小企業経営者向けAI自動化入門｜月10時間の業務をゼロにする",
+    "keyword": "中小企業 AI 自動化",
+    "category": "業務効率化",
+    "description": "中小企業がAIで業務を自動化する具体的な方法。レポート・メール・翻訳など日常業務をAIに任せる実践ガイド。"
+  },
+  {
+    "slug": "ai-translation-business",
+    "title": "ビジネス文書のAI翻訳完全ガイド｜日英・多言語対応の精度を上げるコツ",
+    "keyword": "ビジネス文書 AI 翻訳",
+    "category": "多言語・教育",
+    "description": "契約書・マニュアル・メールをAIで正確に翻訳する方法。日英・ポルトガル語・ベトナム語の翻訳精度を上げるコツ。"
+  },
+  {
+    "slug": "chatgpt-vs-claude-gyoumu",
+    "title": "ChatGPTとClaudeを業務で使い比べた結果｜用途別おすすめまとめ",
+    "keyword": "ChatGPT Claude 比較 業務",
+    "category": "AIツール",
+    "description": "ChatGPTとClaudeを実際の業務で使い比べたレポート。レポート生成・翻訳・文章校正など用途別の使い分け方を解説。"
+  }
+]
