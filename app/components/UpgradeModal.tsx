@@ -104,7 +104,7 @@ export default function UpgradeModal({ open, onClose }: { open: boolean; onClose
             disabled={loading}
             style={{
               width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-              background: "linear-gradient(135deg, var(--accent), #9f7aea)", color: "#fff",
+              background: "var(--gradient-brand)", color: "#fff",
               padding: "14px", borderRadius: 11, fontSize: 16, fontWeight: 700, border: "none",
               cursor: loading ? "not-allowed" : "pointer", boxShadow: "0 4px 24px rgba(124,109,250,0.4)",
             }}

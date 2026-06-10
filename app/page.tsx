@@ -48,11 +48,11 @@ export default function Home() {
 
           {/* Heading */}
           <h1 style={{
-            fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
-            fontWeight: 900,
-            lineHeight: 1.1,
+            fontSize: "var(--fs-hero)",
+            fontWeight: "var(--fw-black)" as React.CSSProperties["fontWeight"],
+            lineHeight: "var(--lh-tight)",
             margin: "0 0 1.25rem",
-            letterSpacing: "-0.03em",
+            letterSpacing: "var(--ls-hero)",
           }}>
             仕事が10倍速くなる
             <br />
@@ -70,7 +70,7 @@ export default function Home() {
           {/* CTAs */}
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: "3.5rem" }}>
             <a href="#tools" style={{
-              background: "linear-gradient(135deg, var(--accent), #9f7aea)",
+              background: "var(--gradient-brand)",
               color: "#fff",
               padding: "13px 28px",
               borderRadius: 11,
@@ -220,7 +220,7 @@ export default function Home() {
               CSVや売上データを貼るだけで、<br />経営報告書・週次レポートを自動作成
             </p>
             <a href="/report" style={{
-              background: "linear-gradient(135deg, var(--accent), #9f7aea)",
+              background: "var(--gradient-brand)",
               color: "#fff",
               padding: "13px 32px",
               borderRadius: 11,

@@ -49,7 +49,7 @@ export default function FavoritesPage() {
               </p>
               <Link href="/#tools" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "linear-gradient(135deg, var(--accent), #9f7aea)", color: "#fff",
+                background: "var(--gradient-brand)", color: "#fff",
                 padding: "11px 24px", borderRadius: 11, fontSize: 15, fontWeight: 700, textDecoration: "none",
               }}>
                 ツール一覧を見る <ArrowRight size={15} />

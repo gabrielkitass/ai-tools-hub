@@ -6,12 +6,13 @@ export default function Nav() {
   return (
     <nav style={{
       borderBottom: "1px solid var(--border)",
-      background: "rgba(10,10,15,0.85)",
+      background: "var(--glass-bg)",
       backdropFilter: "blur(16px)",
       WebkitBackdropFilter: "blur(16px)",
       position: "sticky",
       top: 0,
       zIndex: 50,
+      fontFamily: "var(--font-sans)",
     }}>
       <div style={{
         maxWidth: 1100,
@@ -31,7 +32,7 @@ export default function Nav() {
           <NavLink href="/favorites">お気に入り</NavLink>
           <NavLink href="/blog">活用ガイド</NavLink>
           <Link href="/report" style={{
-            background: "linear-gradient(135deg, var(--accent), #9f7aea)",
+            background: "var(--gradient-brand)",
             color: "#fff",
             padding: "7px 18px",
             borderRadius: 9,
