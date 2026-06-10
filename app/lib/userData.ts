@@ -9,6 +9,7 @@ const K = {
   history: "aih_history",
   total: "aih_total",
   report: "aih_report",
+  premium: "aih_premium",
 };
 
 const EVENT = "aih-userdata-change";
@@ -108,13 +109,21 @@ export function getReportLimit(): number {
   return FREE_LIMIT;
 }
 export function canUseReport(): boolean {
-  return getReportCount() < FREE_LIMIT;
+  return isPremium() || getReportCount() < FREE_LIMIT;
 }
 export function incrementReportCount(): void {
   const m = curMonth();
   const r = read<{ month: string; count: number }>(K.report, { month: m, count: 0 });
   const count = r.month === m ? r.count + 1 : 1;
   write(K.report, { month: m, count });
+}
+
+/* ---------- Premium ---------- */
+export function isPremium(): boolean {
+  return read<boolean>(K.premium, false);
+}
+export function setPremium(value: boolean): void {
+  write(K.premium, value);
 }
 
 /* ---------- Reactive hook ---------- */

@@ -1,9 +1,30 @@
 "use client";
-import { X, Crown, Check } from "lucide-react";
+import { useState } from "react";
+import { X, Crown, Check, Loader2 } from "lucide-react";
 import { getReportLimit } from "../lib/userData";
 
 export default function UpgradeModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   if (!open) return null;
+
+  async function startCheckout() {
+    setLoading(true); setError("");
+    try {
+      const res = await fetch("/api/checkout", { method: "POST" });
+      const json = await res.json();
+      if (json.url) {
+        window.location.href = json.url;
+      } else {
+        setError(json.error || "決済の開始に失敗しました");
+        setLoading(false);
+      }
+    } catch {
+      setError("通信エラーが発生しました");
+      setLoading(false);
+    }
+  }
 
   const perks = [
     "レポート生成 無制限",
@@ -78,18 +99,23 @@ export default function UpgradeModal({ open, onClose }: { open: boolean; onClose
             ))}
           </div>
 
-          <a
-            href="#stripe-coming-soon"
+          <button
+            onClick={startCheckout}
+            disabled={loading}
             style={{
-              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
               background: "linear-gradient(135deg, var(--accent), #9f7aea)", color: "#fff",
-              padding: "14px", borderRadius: 11, fontSize: 16, fontWeight: 700,
-              textDecoration: "none", boxShadow: "0 4px 24px rgba(124,109,250,0.4)",
+              padding: "14px", borderRadius: 11, fontSize: 16, fontWeight: 700, border: "none",
+              cursor: loading ? "not-allowed" : "pointer", boxShadow: "0 4px 24px rgba(124,109,250,0.4)",
             }}
           >
-            <Crown size={17} />
-            プレミアムにアップグレード
-          </a>
+            {loading
+              ? <><Loader2 size={17} style={{ animation: "spin 1s linear infinite" }} />処理中...</>
+              : <><Crown size={17} />プレミアムにアップグレード</>}
+          </button>
+          {error && (
+            <p style={{ fontSize: 12, color: "#fca5a5", margin: "0.75rem 0 0" }}>{error}</p>
+          )}
           <p style={{ fontSize: 12, color: "var(--muted)", margin: "0.85rem 0 0" }}>
             月額980円（税込）・ いつでも解約可能
           </p>
