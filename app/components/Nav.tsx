@@ -28,6 +28,7 @@ export default function Nav() {
 
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <NavLink href="/#tools">ツール一覧</NavLink>
+          <NavLink href="/favorites">お気に入り</NavLink>
           <NavLink href="/blog">活用ガイド</NavLink>
           <Link href="/report" style={{
             background: "linear-gradient(135deg, var(--accent), #9f7aea)",

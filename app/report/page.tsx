@@ -2,6 +2,9 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
 import AdBanner from "../components/AdBanner";
+import ToolMeta from "../components/ToolMeta";
+import UpgradeModal from "../components/UpgradeModal";
+import { useUserData, canUseReport, incrementReportCount, recordToolUse, getReportCount, getReportLimit } from "../lib/userData";
 import { BarChart2, Download, Loader2, ChevronDown } from "lucide-react";
 
 const REPORT_TYPES = [
@@ -33,9 +36,11 @@ export default function ReportPage() {
   const [loading, setLoading] = useState(false);
   const [report, setReport] = useState("");
   const [error, setError] = useState("");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   async function generate() {
     if (!data.trim()) return;
+    if (!canUseReport()) { setShowUpgrade(true); return; }
     setLoading(true); setError(""); setReport("");
     try {
       const res = await fetch("/api/report", {
@@ -46,6 +51,8 @@ export default function ReportPage() {
       const json = await res.json();
       if (json.error) throw new Error(json.error);
       setReport(json.report);
+      incrementReportCount();
+      recordToolUse("/report", "AIレポート自動生成");
     } catch (e) {
       setError("生成に失敗しました。もう一度お試しください。");
       console.error(e);
@@ -75,6 +82,8 @@ export default function ReportPage() {
             <p style={{ fontSize: 14, color: "var(--muted)", margin: 0 }}>データを貼るだけでプロ品質のレポートを作成</p>
           </div>
         </div>
+
+        <ToolMeta href="/report" color="#7c6dfa" />
 
         <AdBanner size="banner" />
 
@@ -138,6 +147,7 @@ export default function ReportPage() {
           >
             {loading ? <><Loader2 size={18} style={{ animation: "spin 1s linear infinite" }} />生成中...</> : "レポートを生成する →"}
           </button>
+          <FreeQuota />
         </div>
 
         {/* エラー */}
@@ -169,6 +179,23 @@ export default function ReportPage() {
 
         <style>{`@keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }`}</style>
       </div>
+
+      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
     </div>
+  );
+}
+
+function FreeQuota() {
+  const { mounted } = useUserData();
+  if (!mounted) return null;
+  const used = getReportCount();
+  const limit = getReportLimit();
+  const left = Math.max(0, limit - used);
+  return (
+    <p style={{ fontSize: 12, color: left === 0 ? "#fca5a5" : "var(--muted)", textAlign: "center", marginTop: 10 }}>
+      {left > 0
+        ? <>今月の無料生成 残り <strong style={{ color: "var(--text)" }}>{left}</strong> / {limit} 回</>
+        : <>今月の無料枠を使い切りました（来月リセット）</>}
+    </p>
   );
 }

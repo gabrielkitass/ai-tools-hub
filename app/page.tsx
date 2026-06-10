@@ -1,21 +1,12 @@
 "use client";
 import Nav from "./components/Nav";
 import ToolCard from "./components/ToolCard";
-import {
-  FileText, MessageSquare, Languages, Lightbulb,
-  BarChart2, PenLine, Mail, Search, Sparkles, Zap, Shield, ArrowRight
-} from "lucide-react";
+import SocialProof from "./components/SocialProof";
+import RecentTools from "./components/RecentTools";
+import { TOOLS } from "./lib/tools";
+import { Sparkles, Zap, Shield, ArrowRight } from "lucide-react";
 
-const tools = [
-  { href: "/report",    icon: BarChart2,     title: "AIレポート自動生成",      description: "CSV・データを貼るだけで経営報告書・週報を自動作成",    badge: "人気No.1", color: "#7c6dfa" },
-  { href: "/summarize", icon: FileText,      title: "文章要約",                description: "長い文章を3行・箇条書きに瞬時に要約",                    color: "#06b6d4" },
-  { href: "/translate", icon: Languages,     title: "多言語翻訳",              description: "日→英・ポルトガル語・ベトナム語など10言語対応",           color: "#10b981" },
-  { href: "/chat",      icon: MessageSquare, title: "AIチャット",              description: "何でも聞けるAIアシスタント（日本語対応）",                color: "#f59e0b" },
-  { href: "/idea",      icon: Lightbulb,     title: "アイデア出し",            description: "テーマを入力するだけで企画・キャッチコピーを生成",        color: "#ec4899" },
-  { href: "/writing",   icon: PenLine,       title: "文章リライト・校正",      description: "ビジネス文書・メールを自然な日本語に整える",              color: "#8b5cf6" },
-  { href: "/email",     icon: Mail,          title: "メール文面作成",          description: "状況を入力するだけでプロのメール文面を自動生成",          color: "#f97316" },
-  { href: "/seo",       icon: Search,        title: "SEOタイトル・見出し生成", description: "キーワードから検索上位を狙えるタイトルを自動生成",        color: "#14b8a6" },
-];
+const tools = TOOLS;
 
 const stats = [
   { value: "8種類", label: "AIツール" },
@@ -68,10 +59,13 @@ export default function Home() {
             <span className="gradient-text">AIツール集</span>
           </h1>
 
-          <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 520, margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
+          <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 520, margin: "0 auto 2rem", lineHeight: 1.7 }}>
             レポート生成・翻訳・文章作成など、<br />
             日々の業務に使える無料AIツールを一カ所に。
           </p>
+
+          <SocialProof />
+
 
           {/* CTAs */}
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: "3.5rem" }}>
@@ -156,6 +150,9 @@ export default function Home() {
           {tools.map(t => <ToolCard key={t.href} {...t} />)}
         </div>
       </section>
+
+      {/* Recent tools */}
+      <RecentTools />
 
       {/* Features */}
       <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1.5rem 4rem" }}>

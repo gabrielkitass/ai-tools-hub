@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
 import AdBanner from "../components/AdBanner";
+import ToolMeta from "../components/ToolMeta";
+import { recordToolUse } from "../lib/userData";
 import { MessageSquare, Loader2 } from "lucide-react";
 
 export default function Page() {
@@ -20,6 +22,7 @@ export default function Page() {
     });
     const json = await res.json();
     setResult(json.result || "エラーが発生しました");
+    if (json.result) recordToolUse("/chat", "AIチャット");
     setLoading(false);
   }
 
@@ -33,6 +36,7 @@ export default function Page() {
           </div>
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>AIチャット</h1>
         </div>
+        <ToolMeta href="/chat" color="#f59e0b" />
         <AdBanner size="banner" />
         <div style={{ background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 14, padding: "1.5rem", marginTop: "1.5rem" }}>
           
