@@ -19,14 +19,43 @@ const SAMPLES = [
   { label: "KPIデータ（例）", value: `訪問者数: 45,230\nCVR: 2.3%\nCV数: 1,040\n売上: 520万円\n目標達成率: 87%\n前月比: +5.2%` },
 ];
 
+function renderTables(text: string) {
+  const lines = text.split("\n");
+  const out: string[] = [];
+  let i = 0;
+  const isRow = (l: string) => /^\s*\|.*\|\s*$/.test(l);
+  const isSep = (l: string) => /^\s*\|?[\s:\-|]+\|?\s*$/.test(l) && l.includes("-");
+  const cells = (l: string) =>
+    l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(c => c.trim());
+
+  while (i < lines.length) {
+    if (isRow(lines[i]) && i + 1 < lines.length && isSep(lines[i + 1])) {
+      const head = cells(lines[i]);
+      i += 2;
+      const rows: string[][] = [];
+      while (i < lines.length && isRow(lines[i])) { rows.push(cells(lines[i])); i++; }
+      const th = head.map(h => `<th style="text-align:left;padding:8px 12px;border-bottom:1px solid #2a2a3d;color:#a78bfa;font-weight:600;font-size:13px">${h}</th>`).join("");
+      const body = rows.map(r =>
+        `<tr>${r.map(c => `<td style="padding:8px 12px;border-bottom:1px solid #1f1f2e;color:#c4c3e0;font-size:14px">${c}</td>`).join("")}</tr>`
+      ).join("");
+      out.push(`<table style="width:100%;border-collapse:collapse;margin:0.75rem 0;background:#15151f;border:1px solid #2a2a3d;border-radius:8px;overflow:hidden"><thead><tr>${th}</tr></thead><tbody>${body}</tbody></table>`);
+    } else {
+      out.push(lines[i]); i++;
+    }
+  }
+  return out.join("\n");
+}
+
 function parseMarkdown(text: string) {
-  return text
+  return renderTables(text)
     .replace(/^## (.+)$/gm, '<h2 style="font-size:22px;font-weight:700;margin:1.5rem 0 0.75rem;color:#f0eeff">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 style="font-size:16px;font-weight:600;margin:1.25rem 0 0.5rem;color:#a78bfa">$1</h3>')
     .replace(/^\*\*(.+)\*\*$/gm, '<strong>$1</strong>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/^- (.+)$/gm, '<li style="margin:4px 0;color:#c4c3e0">$1</li>')
     .replace(/(<li.*<\/li>\n?)+/g, (m) => `<ul style="padding-left:1.25rem;margin:0.5rem 0">${m}</ul>`)
+    .replace(/(<\/table>)\n+/g, "$1")
+    .replace(/\n*(<table)/g, "$1")
     .replace(/\n\n/g, '<br/><br/>');
 }
 
