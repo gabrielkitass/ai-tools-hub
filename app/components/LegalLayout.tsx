@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 export function LegalSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -39,6 +40,7 @@ export default function LegalLayout({
           {children}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "利用規約 | AI Tools Hub",
+  title: "利用規約",
   description: "AI Tools Hub の利用規約。サービスの概要、利用条件、禁止事項、免責事項などについて記載しています。",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

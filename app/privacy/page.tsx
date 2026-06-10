@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー | AI Tools Hub",
+  title: "プライバシーポリシー",
   description: "AI Tools Hub のプライバシーポリシー。取得する情報、利用目的、Google AdSense・Cookieの取り扱いについて記載しています。",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

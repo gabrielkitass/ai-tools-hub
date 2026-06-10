@@ -2,8 +2,29 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AIツール集 | 無料で使えるAIツール",
+  metadataBase: new URL("https://ai-tools-hub-gules.vercel.app"),
+  title: {
+    default: "AIツール集 | 無料で使えるAIツール",
+    template: "%s | AIツール集",
+  },
   description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
+  applicationName: "AI Tools Hub",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: "AIツール集",
+    title: "AIツール集 | 無料で使えるAIツール",
+    description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AIツール集 | 無料で使えるAIツール",
+    description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
+  },
   verification: {
     google: "google60ae625e75b13fa0",
   },

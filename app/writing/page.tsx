@@ -3,6 +3,7 @@ import { useState } from "react";
 import Nav from "../components/Nav";
 import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
+import Footer from "../components/Footer";
 import { recordToolUse } from "../lib/userData";
 import { PenLine, Loader2 } from "lucide-react";
 
@@ -59,6 +60,7 @@ export default function Page() {
         )}
         <style>{`@keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }`}</style>
       </div>
+      <Footer />
     </div>
   );
 }

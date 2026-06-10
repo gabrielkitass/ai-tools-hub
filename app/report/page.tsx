@@ -3,6 +3,7 @@ import { useState } from "react";
 import Nav from "../components/Nav";
 import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
+import Footer from "../components/Footer";
 import UpgradeModal from "../components/UpgradeModal";
 import { useUserData, canUseReport, incrementReportCount, recordToolUse, getReportCount, getReportLimit } from "../lib/userData";
 import { BarChart2, Download, Loader2, ChevronDown } from "lucide-react";
@@ -181,6 +182,7 @@ export default function ReportPage() {
       </div>
 
       <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
+      <Footer />
     </div>
   );
 }
