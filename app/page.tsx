@@ -288,9 +288,13 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>© 2025 AIツール集 — 無料で使えるAIツールサービス</p>
-            <p style={{ fontSize: 12, color: "var(--border)", margin: 0 }}>Powered by Claude AI</p>
+            <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+              <a href="/privacy" style={{ fontSize: 13, color: "var(--muted)", textDecoration: "none" }}>プライバシーポリシー</a>
+              <a href="/terms" style={{ fontSize: 13, color: "var(--muted)", textDecoration: "none" }}>利用規約</a>
+              <p style={{ fontSize: 12, color: "var(--border)", margin: 0 }}>Powered by Claude AI</p>
+            </div>
           </div>
         </div>
       </footer>
