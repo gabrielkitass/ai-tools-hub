@@ -12,8 +12,7 @@ export default function PrivacyPage() {
     <LegalLayout title="プライバシーポリシー" updated="2025年6月">
       <LegalSection title="運営者情報">
         <p style={{ margin: 0 }}>
-          サービス名: AI Tools Hub<br />
-          連絡先: <a href="mailto:gabkitass716@gmail.com" style={{ color: "var(--accent2)" }}>gabkitass716@gmail.com</a>
+          サービス名: AI Tools Hub
         </p>
       </LegalSection>
 
@@ -70,13 +69,6 @@ export default function PrivacyPage() {
       <LegalSection title="第三者提供について">
         <p style={{ margin: 0 }}>
           当サービスは、法令に基づく場合を除き、ご本人の同意なく取得した情報を第三者に提供することはありません。ただし、上記の Google Analytics および Google AdSense など、サービス運営に必要な範囲で外部サービスを利用する場合があります。
-        </p>
-      </LegalSection>
-
-      <LegalSection title="お問い合わせ先">
-        <p style={{ margin: 0 }}>
-          本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。<br />
-          <a href="mailto:gabkitass716@gmail.com" style={{ color: "var(--accent2)" }}>gabkitass716@gmail.com</a>
         </p>
       </LegalSection>
     </LegalLayout>

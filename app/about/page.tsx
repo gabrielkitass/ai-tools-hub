@@ -3,7 +3,7 @@ import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "運営者情報",
-  description: "AI Tools Hub の運営者情報・サービス概要。提供するAIツール、運営方針、お問い合わせ先について記載しています。",
+  description: "AI Tools Hub の運営者情報・サービス概要。提供するAIツールと運営方針について記載しています。",
   alternates: { canonical: "/about" },
 };
 
@@ -50,15 +50,7 @@ export default function AboutPage() {
       <LegalSection title="運営者情報">
         <p style={{ margin: 0 }}>
           サービス名: AI Tools Hub<br />
-          運営形態: 個人運営<br />
-          連絡先: <a href="mailto:gabkitass716@gmail.com" style={{ color: "var(--accent2)" }}>gabkitass716@gmail.com</a>
-        </p>
-      </LegalSection>
-
-      <LegalSection title="お問い合わせ">
-        <p style={{ margin: 0 }}>
-          サービスに関するご質問・ご要望・不具合のご報告は、以下の連絡先までお願いいたします。内容を確認のうえ、順次対応いたします。<br />
-          <a href="mailto:gabkitass716@gmail.com" style={{ color: "var(--accent2)" }}>gabkitass716@gmail.com</a>
+          運営形態: 個人運営
         </p>
       </LegalSection>
 
