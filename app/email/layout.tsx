@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・基本無料。",
   alternates: { canonical: "/email" },
   openGraph: {
-    title: "メール文面作成 | AIツール集",
+    title: "メール文面作成 | Work AI Hub",
     description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・基本無料。",
     url: "/email",
   },

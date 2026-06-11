@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "テーマを入力するだけで企画・キャッチコピー・新規事業のアイデアをAIが提案。登録不要・基本無料。",
   alternates: { canonical: "/idea" },
   openGraph: {
-    title: "アイデア出し | AIツール集",
+    title: "アイデア出し | Work AI Hub",
     description: "テーマを入力するだけで企画・キャッチコピー・新規事業のアイデアをAIが提案。登録不要・基本無料。",
     url: "/idea",
   },

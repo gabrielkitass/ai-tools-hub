@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "キーワードから検索上位を狙えるSEOタイトル・見出し構成をAIが提案。登録不要・基本無料。",
   alternates: { canonical: "/seo" },
   openGraph: {
-    title: "SEOタイトル・見出し生成 | AIツール集",
+    title: "SEOタイトル・見出し生成 | Work AI Hub",
     description: "キーワードから検索上位を狙えるSEOタイトル・見出し構成をAIが提案。登録不要・基本無料。",
     url: "/seo",
   },

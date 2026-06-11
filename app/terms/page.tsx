@@ -3,7 +3,7 @@ import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "利用規約",
-  description: "AI Tools Hub の利用規約。サービスの概要、利用条件、禁止事項、免責事項などについて記載しています。",
+  description: "Work AI Hub の利用規約。サービスの概要、利用条件、禁止事項、免責事項などについて記載しています。",
   alternates: { canonical: "/terms" },
 };
 
@@ -12,7 +12,7 @@ export default function TermsPage() {
     <LegalLayout title="利用規約" updated="2025年6月">
       <LegalSection title="サービスの概要">
         <p style={{ margin: 0 }}>
-          AI Tools Hub（以下「当サービス」）は、AI を活用したレポート生成・文章要約・翻訳・アイデア出しなどの各種ツールを無料で提供する Web サービスです。本規約は、当サービスの利用に関する条件を定めるものです。利用者は、当サービスを利用することで本規約に同意したものとみなされます。
+          Work AI Hub（以下「当サービス」）は、AI を活用したレポート生成・文章要約・翻訳・アイデア出しなどの各種ツールを無料で提供する Web サービスです。本規約は、当サービスの利用に関する条件を定めるものです。利用者は、当サービスを利用することで本規約に同意したものとみなされます。
         </p>
       </LegalSection>
 

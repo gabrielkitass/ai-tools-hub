@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BookOpen, Tag } from "lucide-react";
 
 export const metadata = {
-  title: "AIツール活用ガイド | AIツール集ブログ",
+  title: "AIツール活用ガイド | Work AI Hub ブログ",
   description: "AI・業務効率化・製造業のDXに関する実践的な情報を発信。無料AIツールの使い方・活用事例を詳しく解説。",
 };
 
@@ -77,7 +77,7 @@ export default function BlogPage() {
       </div>
 
       <footer style={{ borderTop: "1px solid var(--border)", padding: "1.5rem", textAlign: "center", color: "var(--muted)", fontSize: 13 }}>
-        © 2025 AIツール集
+        © 2025 Work AI Hub
       </footer>
     </div>
   );

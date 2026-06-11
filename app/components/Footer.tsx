@@ -33,7 +33,7 @@ export default function Footer() {
         alignItems: "center", justifyContent: "space-between",
       }}>
         <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>
-          © 2025 AIツール集 — 無料で使えるAIツールサービス
+          © 2025 Work AI Hub — 無料で使えるAIツールサービス
         </p>
         <nav style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
           {LINKS.map(([label, href]) => (

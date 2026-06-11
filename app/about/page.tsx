@@ -3,7 +3,7 @@ import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "運営者情報",
-  description: "AI Tools Hub の運営者情報・サービス概要。提供するAIツールと運営方針について記載しています。",
+  description: "Work AI Hub の運営者情報・サービス概要。提供するAIツールと運営方針について記載しています。",
   alternates: { canonical: "/about" },
 };
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
     <LegalLayout title="運営者情報" updated="2025年6月">
       <LegalSection title="サービス概要">
         <p style={{ margin: 0 }}>
-          AI Tools Hub は、登録不要・基本無料で使える日本語対応のAIツール集です。Anthropic 社のAIモデル「Claude」を活用し、レポート作成・要約・翻訳・文章校正など、日々の業務やコンテンツ制作を効率化するツールをまとめて提供しています。
+          Work AI Hub は、登録不要・基本無料で使える日本語対応のAIツール集です。Anthropic 社のAIモデル「Claude」を活用し、レポート作成・要約・翻訳・文章校正など、日々の業務やコンテンツ制作を効率化するツールをまとめて提供しています。
         </p>
       </LegalSection>
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       <LegalSection title="運営者情報">
         <p style={{ margin: 0 }}>
-          サービス名: AI Tools Hub<br />
+          サービス名: Work AI Hub<br />
           運営形態: 個人運営
         </p>
       </LegalSection>

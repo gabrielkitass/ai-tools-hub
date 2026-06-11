@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
 
   const origin =
     req.headers.get("origin") ||
-    `https://${req.headers.get("host") || "ai-tools-hub-gules.vercel.app"}`;
+    `https://${req.headers.get("host") || "work-ai-hub.com"}`;
 
   const params = new URLSearchParams();
   params.set("mode", "subscription");

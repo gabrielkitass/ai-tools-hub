@@ -69,7 +69,7 @@ export default function Home() {
           }}>
             仕事が10倍速くなる
             <br />
-            <span className="gradient-text">AIツール集</span>
+            <span className="gradient-text">Work AI Hub</span>
           </h1>
 
           <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 520, margin: "0 auto 2rem", lineHeight: 1.7 }}>
@@ -278,7 +278,7 @@ export default function Home() {
                 }}>
                   <Sparkles size={14} color="#fff" />
                 </div>
-                <span style={{ fontWeight: 800, fontSize: 16, letterSpacing: "-0.02em" }}>AIツール集</span>
+                <span style={{ fontWeight: 800, fontSize: 16, letterSpacing: "-0.02em" }}>Work AI Hub</span>
               </div>
               <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.7, maxWidth: 280, margin: 0 }}>
                 中小企業・製造業の経営者・管理職向けに、実務で使える無料AIツールを提供しています。
@@ -312,7 +312,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-            <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>© 2025 AIツール集 — 無料で使えるAIツールサービス</p>
+            <p style={{ fontSize: 13, color: "var(--muted)", margin: 0 }}>© 2025 Work AI Hub — 無料で使えるAIツールサービス</p>
             <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
               <a href="/privacy" style={{ fontSize: 13, color: "var(--muted)", textDecoration: "none" }}>プライバシーポリシー</a>
               <a href="/terms" style={{ fontSize: 13, color: "var(--muted)", textDecoration: "none" }}>利用規約</a>

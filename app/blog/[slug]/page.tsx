@@ -102,7 +102,7 @@ export default function ArticlePage({ params }: Props) {
       `}</style>
 
       <footer style={{ borderTop: "1px solid var(--border)", padding: "1.5rem", textAlign: "center", color: "var(--muted)", fontSize: 13 }}>
-        © 2025 AIツール集
+        © 2025 Work AI Hub
       </footer>
     </div>
   );

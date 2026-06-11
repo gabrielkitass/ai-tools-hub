@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
 
-const BASE_URL = "https://ai-tools-hub-gules.vercel.app";
+const BASE_URL = "https://work-ai-hub.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

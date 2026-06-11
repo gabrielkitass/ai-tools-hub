@@ -3,7 +3,7 @@ import LegalLayout, { LegalSection } from "../components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
-  description: "AI Tools Hub のプライバシーポリシー。取得する情報、利用目的、Google AdSense・Cookieの取り扱いについて記載しています。",
+  description: "Work AI Hub のプライバシーポリシー。取得する情報、利用目的、Google AdSense・Cookieの取り扱いについて記載しています。",
   alternates: { canonical: "/privacy" },
 };
 
@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <LegalLayout title="プライバシーポリシー" updated="2025年6月">
       <LegalSection title="運営者情報">
         <p style={{ margin: 0 }}>
-          サービス名: AI Tools Hub
+          サービス名: Work AI Hub
         </p>
       </LegalSection>
 

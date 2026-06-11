@@ -2,27 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai-tools-hub-gules.vercel.app"),
+  metadataBase: new URL("https://work-ai-hub.com"),
   title: {
-    default: "AIツール集 | 無料で使えるAIツール",
-    template: "%s | AIツール集",
+    default: "Work AI Hub | 無料で使えるAIツール",
+    template: "%s | Work AI Hub",
   },
   description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
-  applicationName: "AI Tools Hub",
+  applicationName: "Work AI Hub",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "AIツール集",
-    title: "AIツール集 | 無料で使えるAIツール",
+    siteName: "Work AI Hub",
+    title: "Work AI Hub | 無料で使えるAIツール",
     description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AIツール集 | 無料で使えるAIツール",
+    title: "Work AI Hub | 無料で使えるAIツール",
     description: "無料で使えるAIツール集。レポート自動生成、文章要約、翻訳、アイデア出しなど多数のAIツールを提供。",
   },
   verification: {

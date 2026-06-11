@@ -47,7 +47,7 @@ export default function Nav() {
         justifyContent: "space-between",
       }}>
         <Link href="/" onClick={() => setOpen(false)} style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <Image src="/logo.svg" alt="AI Tools Hub" width={160} height={40} style={{ objectFit: "contain", maxWidth: "44vw", height: "auto" }} priority />
+          <Image src="/logo.svg" alt="Work AI Hub" width={160} height={40} style={{ objectFit: "contain", maxWidth: "44vw", height: "auto" }} priority />
         </Link>
 
         {/* Desktop links */}

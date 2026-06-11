@@ -14,5 +14,5 @@
   <circle cx="16" cy="60" r="5" fill="#7c6dfa"/>
   <circle cx="32" cy="60" r="5" fill="#a78bfa"/>
   <circle cx="48" cy="60" r="5" fill="#06b6d4"/>
-  <text x="70" y="56" font-family="'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="800" fill="white" letter-spacing="-1">AI Tools <tspan fill="url(#grad2)">Hub</tspan></text>
+  <text x="70" y="56" font-family="'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="800" fill="white" letter-spacing="-1">Work AI <tspan fill="url(#grad2)">Hub</tspan></text>
 </svg>

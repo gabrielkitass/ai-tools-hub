@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "CSV・売上データを貼るだけで、経営報告書・週次レポートをAIが自動作成。登録不要・基本無料。",
   alternates: { canonical: "/report" },
   openGraph: {
-    title: "AIレポート自動生成（無料） | AIツール集",
+    title: "AIレポート自動生成（無料） | Work AI Hub",
     description: "CSV・売上データを貼るだけで、経営報告書・週次レポートをAIが自動作成。登録不要・基本無料。",
     url: "/report",
   },
