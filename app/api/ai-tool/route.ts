@@ -1,7 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const MAX_INPUT_LENGTH = 12000;
+
 export async function POST(req: NextRequest) {
-  const { tool, input, options } = await req.json();
+  let body: { tool?: string; input?: string; options?: Record<string, string> };
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "リクエスト形式が不正です" }, { status: 400 });
+  }
+  const { tool, input, options } = body;
+
+  if (typeof input !== "string" || !input.trim()) {
+    return NextResponse.json({ error: "入力が空です" }, { status: 400 });
+  }
+  if (input.length > MAX_INPUT_LENGTH) {
+    return NextResponse.json(
+      { error: `入力が長すぎます（最大${MAX_INPUT_LENGTH.toLocaleString()}文字）` },
+      { status: 400 },
+    );
+  }
 
   const systemPrompts: Record<string, string> = {
     summarize: "あなたは優秀な日本語の文章要約AIです。与えられたテキストを指定された形式で要約してください。",
@@ -23,34 +41,43 @@ export async function POST(req: NextRequest) {
     seo: (i) => `キーワード「${i}」でSEO効果の高いタイトル5案と主要見出し構成を提案してください。`,
   };
 
-  const systemPrompt = systemPrompts[tool] || "あなたは優秀なAIアシスタントです。";
-  const userPrompt = userPrompts[tool]?.(input, options || {}) || input;
+  const toolKey = typeof tool === "string" ? tool : "";
+  const systemPrompt = systemPrompts[toolKey] || "あなたは優秀なAIアシスタントです。";
+  const userPrompt = userPrompts[toolKey]?.(input, options || {}) || input;
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return NextResponse.json({ error: "サーバー設定エラー（APIキー未設定）" }, { status: 500 });
   }
 
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-6",
-      max_tokens: 1000,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userPrompt }],
-    }),
-  });
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: [{ role: "user", content: userPrompt }],
+      }),
+    });
 
-  if (!response.ok) {
-    return NextResponse.json({ error: "AI生成に失敗しました" }, { status: 500 });
+    if (!response.ok) {
+      const status = response.status === 429 ? 429 : 502;
+      const error = status === 429
+        ? "アクセスが集中しています。少し時間をおいて再度お試しください"
+        : "AI生成に失敗しました";
+      return NextResponse.json({ error }, { status });
+    }
+
+    const result = await response.json();
+    const text = result.content?.find((b: { type: string }) => b.type === "text")?.text || "";
+    return NextResponse.json({ result: text });
+  } catch {
+    return NextResponse.json({ error: "通信エラーが発生しました" }, { status: 502 });
   }
-
-  const result = await response.json();
-  const text = result.content?.find((b: { type: string }) => b.type === "text")?.text || "";
-  return NextResponse.json({ result: text });
 }

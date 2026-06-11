@@ -18,15 +18,20 @@ export default function Page() {
   async function run() {
     if (!input.trim()) return;
     setLoading(true); setResult("");
-    const res = await fetch("/api/ai-tool", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tool: "writing", input, options: {} }),
-    });
-    const json = await res.json();
-    setResult(json.result || "エラーが発生しました");
-    if (json.result) recordToolUse("/writing", "文章リライト・校正");
-    setLoading(false);
+    try {
+      const res = await fetch("/api/ai-tool", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "writing", input, options: {} }),
+      });
+      const json = await res.json();
+      setResult(json.result || json.error || "エラーが発生しました");
+      if (json.result) recordToolUse("/writing", "文章リライト・校正");
+    } catch {
+      setResult("通信エラーが発生しました。時間をおいて再度お試しください。");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
