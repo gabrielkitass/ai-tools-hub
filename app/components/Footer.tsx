@@ -8,7 +8,7 @@ const LINKS: [string, string][] = [
   ["利用規約", "/terms"],
 ];
 
-const TRUST_BADGES = ["🔒 データ非保存", "✅ 完全無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"];
+const TRUST_BADGES = ["🔒 データ非保存", "✅ 基本無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"];
 
 export default function Footer() {
   return (

@@ -78,7 +78,7 @@ export default function ArticlePage({ params }: Props) {
         {/* CTA */}
         <div style={{ background: "var(--bg2)", border: "1px solid rgba(124,109,250,0.3)", borderRadius: 14, padding: "2rem", marginTop: "2rem", textAlign: "center" }}>
           <p style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>実際にAIツールを試してみませんか？</p>
-          <p style={{ color: "var(--muted)", fontSize: 14, marginBottom: "1.25rem" }}>登録不要・完全無料でレポート生成や翻訳ツールをすぐ使えます</p>
+          <p style={{ color: "var(--muted)", fontSize: 14, marginBottom: "1.25rem" }}>登録不要・基本無料でレポート生成や翻訳ツールをすぐ使えます</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/report" style={{ background: "var(--accent)", color: "#fff", padding: "10px 22px", borderRadius: 8, textDecoration: "none", fontSize: 14, fontWeight: 600 }}>
               AIレポート生成を試す →

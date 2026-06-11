@@ -124,7 +124,7 @@ export default function ReportPage() {
         </div>
 
         <p style={{ fontSize: 12, color: "var(--muted)", margin: "-1.25rem 0 1.5rem" }}>
-          登録不要・完全無料 | 入力データは保存されません | Claude AI搭載
+          登録不要・基本無料 | 入力データは保存されません | Claude AI搭載
         </p>
 
         <ToolMeta href="/report" color="#7c6dfa" />

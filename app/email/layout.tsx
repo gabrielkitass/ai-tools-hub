@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "メール文面作成",
-  description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・完全無料。",
+  description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・基本無料。",
   alternates: { canonical: "/email" },
   openGraph: {
     title: "メール文面作成 | AIツール集",
-    description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・完全無料。",
+    description: "状況を入力するだけでビジネスメールの文面をAIが自動作成。登録不要・基本無料。",
     url: "/email",
   },
 };

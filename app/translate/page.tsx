@@ -40,7 +40,7 @@ export default function Page() {
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>多言語翻訳</h1>
         </div>
         <p style={{ fontSize: 12, color: "var(--muted)", margin: "-1.25rem 0 1.5rem" }}>
-          登録不要・完全無料 | 入力データは保存されません | Claude AI搭載
+          登録不要・基本無料 | 入力データは保存されません | Claude AI搭載
         </p>
         <ToolMeta href="/translate" color="#10b981" />
         <AdBanner size="banner" />

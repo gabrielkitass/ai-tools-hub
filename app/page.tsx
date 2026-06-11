@@ -10,7 +10,7 @@ const tools = TOOLS;
 
 const stats = [
   { value: "8種類", label: "AIツール" },
-  { value: "完全無料", label: "登録不要" },
+  { value: "基本無料", label: "登録不要" },
   { value: "Claude", label: "AI搭載" },
   { value: "日本語", label: "完全対応" },
 ];
@@ -43,7 +43,7 @@ export default function Home() {
             fontWeight: 600,
           }}>
             <Sparkles size={13} />
-            完全無料 · 登録不要 · 今すぐ使える
+            基本無料 · 登録不要 · 今すぐ使える
           </div>
 
           {/* Differentiation badges */}
@@ -176,7 +176,7 @@ export default function Home() {
         }}>
           {[
             { icon: Zap, color: "#f59e0b", title: "即座に結果が出る", desc: "入力後わずか数秒でAIが回答。業務の待ち時間をゼロに。" },
-            { icon: Shield, color: "#10b981", title: "登録不要・完全無料", desc: "アカウント作成なしで今すぐ使える。クレジットカード不要。" },
+            { icon: Shield, color: "#10b981", title: "登録不要・基本無料", desc: "アカウント作成なしで今すぐ使える。クレジットカード不要。" },
             { icon: Sparkles, color: "#7c6dfa", title: "最新AI Claude搭載", desc: "Anthropic社の最新モデルで高精度な日本語出力を実現。" },
           ].map((f, i) => (
             <div key={i} style={{
@@ -255,7 +255,7 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid var(--border)", padding: "3rem 1.5rem" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: "2.5rem" }}>
-            {["🔒 データ非保存", "✅ 完全無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"].map(b => (
+            {["🔒 データ非保存", "✅ 基本無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"].map(b => (
               <span key={b} style={{
                 fontSize: 12, color: "var(--muted)",
                 border: "1px solid var(--border)", borderRadius: 99, padding: "4px 12px",
