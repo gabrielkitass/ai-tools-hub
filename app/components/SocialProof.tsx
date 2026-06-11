@@ -20,11 +20,15 @@ export default function SocialProof() {
   useEffect(() => {
     setMounted(true);
     let alive = true;
+    setOnline(computeOnline(0));
     const load = async () => {
       const s = await fetchStats();
-      if (alive && s) {
+      if (!alive) return;
+      if (s) {
         setTarget(s.total_count);
         setOnline(computeOnline(s.active_users));
+      } else {
+        setOnline(computeOnline(0));
       }
     };
     load();
