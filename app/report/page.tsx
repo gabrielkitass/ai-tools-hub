@@ -5,6 +5,7 @@ import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
 import Footer from "../components/Footer";
 import UpgradeModal from "../components/UpgradeModal";
+import PrivacyWarning from "../components/PrivacyWarning";
 import { useUserData, canUseReport, incrementReportCount, recordToolUse, getReportCount, getReportLimit, setPremium } from "../lib/userData";
 import { BarChart2, Download, Loader2, ChevronDown } from "lucide-react";
 
@@ -121,9 +122,14 @@ export default function ReportPage() {
           </div>
         </div>
 
+        <p style={{ fontSize: 12, color: "var(--muted)", margin: "-1.25rem 0 1.5rem" }}>
+          登録不要・完全無料 | 入力データは保存されません | Claude AI搭載
+        </p>
+
         <ToolMeta href="/report" color="#7c6dfa" />
 
         <AdBanner size="banner" />
+        <PrivacyWarning />
 
         {/* 入力フォーム */}
         <div style={{ background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 14, padding: "1.5rem", marginTop: "1.5rem" }}>

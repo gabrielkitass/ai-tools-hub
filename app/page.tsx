@@ -46,6 +46,19 @@ export default function Home() {
             完全無料 · 登録不要 · 今すぐ使える
           </div>
 
+          {/* Differentiation badges */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: "1.75rem" }}>
+            {["🔒 入力データは保存されません", "⚡ Claude AI搭載", "🇯🇵 日本語完全対応", "🏢 業種問わず使える"].map(b => (
+              <span key={b} style={{
+                fontSize: 12, color: "var(--text-2)",
+                background: "var(--bg2)", border: "1px solid var(--border)",
+                borderRadius: 99, padding: "5px 14px", fontWeight: 500,
+              }}>
+                {b}
+              </span>
+            ))}
+          </div>
+
           {/* Heading */}
           <h1 style={{
             fontSize: "var(--fs-hero)",
@@ -241,6 +254,16 @@ export default function Home() {
       {/* Footer */}
       <footer style={{ borderTop: "1px solid var(--border)", padding: "3rem 1.5rem" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: "2.5rem" }}>
+            {["🔒 データ非保存", "✅ 完全無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"].map(b => (
+              <span key={b} style={{
+                fontSize: 12, color: "var(--muted)",
+                border: "1px solid var(--border)", borderRadius: 99, padding: "4px 12px",
+              }}>
+                {b}
+              </span>
+            ))}
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40, marginBottom: "2.5rem" }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "0.75rem" }}>

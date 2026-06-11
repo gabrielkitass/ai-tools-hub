@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
 import Footer from "../components/Footer";
+import PrivacyWarning from "../components/PrivacyWarning";
 import { recordToolUse } from "../lib/userData";
 import { Mail, Loader2 } from "lucide-react";
 
@@ -37,8 +38,12 @@ export default function Page() {
           </div>
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>メール文面作成</h1>
         </div>
+        <p style={{ fontSize: 12, color: "var(--muted)", margin: "-1.25rem 0 1.5rem" }}>
+          登録不要・完全無料 | 入力データは保存されません | Claude AI搭載
+        </p>
         <ToolMeta href="/email" color="#f97316" />
         <AdBanner size="banner" />
+        <PrivacyWarning />
         <div style={{ background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 14, padding: "1.5rem", marginTop: "1.5rem" }}>
           
           <textarea

@@ -17,6 +17,20 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
+      <LegalSection title="AIサービスへのデータ送信について">
+        <p style={{ margin: 0 }}>
+          当サービスの各AIツールでは、ユーザーが入力した内容をAIによる処理のため、Anthropic, PBC が提供するAIサービス「Claude」のAPIに送信します。
+        </p>
+        <ul style={{ margin: "0.5rem 0 0", paddingLeft: "1.25rem" }}>
+          <li>入力内容はAIの応答を生成する目的でのみ送信されます。</li>
+          <li>入力内容および生成結果を当サービスのサーバーに保存することはありません。</li>
+          <li>送信先であるAnthropicでの取り扱いは <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent2)" }}>Anthropic プライバシーポリシー</a> をご確認ください。</li>
+        </ul>
+        <p style={{ margin: "0.75rem 0 0" }}>
+          機密情報・個人情報・社外秘データなど、第三者に送信されては困る情報は入力しないでください。入力は利用者ご自身の責任において行っていただきますようお願いいたします。
+        </p>
+      </LegalSection>
+
       <LegalSection title="取得する情報">
         <p style={{ margin: 0 }}>
           当サービスでは、サービスの提供・改善のために以下の情報を取得する場合があります。

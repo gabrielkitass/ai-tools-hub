@@ -8,9 +8,24 @@ const LINKS: [string, string][] = [
   ["利用規約", "/terms"],
 ];
 
+const TRUST_BADGES = ["🔒 データ非保存", "✅ 完全無料", "🤖 Claude AI", "📱 スマホ対応", "🇯🇵 日本語対応"];
+
 export default function Footer() {
   return (
     <footer style={{ borderTop: "1px solid var(--border)", marginTop: "3rem", padding: "2rem 1.5rem" }}>
+      <div style={{
+        maxWidth: 1100, margin: "0 auto 1.5rem",
+        display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center",
+      }}>
+        {TRUST_BADGES.map(b => (
+          <span key={b} style={{
+            fontSize: 12, color: "var(--muted)",
+            border: "1px solid var(--border)", borderRadius: 99, padding: "4px 12px",
+          }}>
+            {b}
+          </span>
+        ))}
+      </div>
       <div style={{
         maxWidth: 1100, margin: "0 auto",
         display: "flex", flexWrap: "wrap", gap: 16,
