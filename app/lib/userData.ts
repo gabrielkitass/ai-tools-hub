@@ -97,7 +97,7 @@ export function recordToolUse(href: string, title: string): void {
   write(K.total, getTotalUsage() + 1);
 
   // Bump the shared real-time counter in Supabase (fire-and-forget).
-  void bumpUsage();
+  void bumpUsage(href);
 }
 
 /* ---------- Report monthly limit ---------- */

@@ -1,12 +1,20 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) {
     return NextResponse.json({ error: "Supabase 未設定" }, { status: 500 });
+  }
+
+  let tool: string | null = null;
+  try {
+    const body = await req.json();
+    if (typeof body?.tool === "string") tool = body.tool;
+  } catch {
+    /* no/invalid body — increment without tool */
   }
 
   try {
@@ -17,7 +25,7 @@ export async function POST() {
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
       },
-      body: "{}",
+      body: JSON.stringify({ p_tool: tool }),
     });
 
     if (!res.ok) {

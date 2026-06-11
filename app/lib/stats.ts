@@ -26,9 +26,13 @@ export async function fetchStats(): Promise<Stats | null> {
 }
 
 // Bump the shared counter via our API route, then broadcast the new numbers.
-export async function bumpUsage(): Promise<void> {
+export async function bumpUsage(tool?: string): Promise<void> {
   try {
-    const res = await fetch("/api/stats/increment", { method: "POST" });
+    const res = await fetch("/api/stats/increment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tool: tool ?? null }),
+    });
     if (!res.ok) return;
     const data = (await res.json()) as Stats;
     if (typeof window !== "undefined" && typeof data.total_count === "number") {
