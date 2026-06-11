@@ -4,6 +4,7 @@ const LINKS: [string, string][] = [
   ["ツール一覧", "/#tools"],
   ["活用ガイド", "/blog"],
   ["お気に入り", "/favorites"],
+  ["運営者情報", "/about"],
   ["プライバシーポリシー", "/privacy"],
   ["利用規約", "/terms"],
 ];
