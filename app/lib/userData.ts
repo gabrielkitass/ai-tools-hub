@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { TOOL_SEEDS } from "./tools";
+import { bumpUsage } from "./stats";
 
 const K = {
   fav: "aih_favorites",
@@ -94,6 +95,9 @@ export function recordToolUse(href: string, title: string): void {
   write(K.history, hist.slice(0, HISTORY_CAP));
 
   write(K.total, getTotalUsage() + 1);
+
+  // Bump the shared real-time counter in Supabase (fire-and-forget).
+  void bumpUsage();
 }
 
 /* ---------- Report monthly limit ---------- */

@@ -1,19 +1,38 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Users, TrendingUp } from "lucide-react";
-import { useUserData, getTotalUsage } from "../lib/userData";
+import { fetchStats, onStatsChange } from "../lib/stats";
 
 export default function SocialProof() {
-  const { mounted } = useUserData();
-  const target = mounted ? getTotalUsage() : 0;
-
+  const [mounted, setMounted] = useState(false);
+  const [target, setTarget] = useState(0);
   const [display, setDisplay] = useState(0);
-  const [online, setOnline] = useState(7);
+  const [online, setOnline] = useState(0);
   const raf = useRef<number | null>(null);
+
+  // Load shared stats from Supabase on mount, refresh periodically,
+  // and react to live bumps triggered after a tool is used.
+  useEffect(() => {
+    setMounted(true);
+    let alive = true;
+    const load = async () => {
+      const s = await fetchStats();
+      if (alive && s) {
+        setTarget(s.total_count);
+        setOnline(s.active_users);
+      }
+    };
+    load();
+    const id = setInterval(load, 30000);
+    const off = onStatsChange(s => {
+      setTarget(s.total_count);
+      setOnline(s.active_users);
+    });
+    return () => { alive = false; clearInterval(id); off(); };
+  }, []);
 
   // Count-up animation toward the current total
   useEffect(() => {
-    if (!mounted) return;
     const from = display;
     const to = target;
     if (from === to) return;
@@ -28,15 +47,7 @@ export default function SocialProof() {
     raf.current = requestAnimationFrame(step);
     return () => { if (raf.current) cancelAnimationFrame(raf.current); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [target, mounted]);
-
-  // "Now N people using" — jitters every few seconds
-  useEffect(() => {
-    if (!mounted) return;
-    const tick = () => setOnline(3 + Math.floor(Math.random() * 10));
-    const id = setInterval(tick, 4000);
-    return () => clearInterval(id);
-  }, [mounted]);
+  }, [target]);
 
   return (
     <div style={{
