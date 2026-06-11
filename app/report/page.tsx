@@ -6,8 +6,9 @@ import ToolMeta from "../components/ToolMeta";
 import Footer from "../components/Footer";
 import UpgradeModal from "../components/UpgradeModal";
 import PrivacyWarning from "../components/PrivacyWarning";
+import IconReport from "../components/icons/IconReport";
 import { useUserData, canUseReport, incrementReportCount, recordToolUse, getReportCount, getReportLimit, setPremium } from "../lib/userData";
-import { BarChart2, Download, Loader2, ChevronDown } from "lucide-react";
+import { Download, Loader2, ChevronDown } from "lucide-react";
 
 const REPORT_TYPES = [
   { value: "weekly",  label: "週次レポート",        desc: "先週のデータを週次サマリーに" },
@@ -114,7 +115,7 @@ export default function ReportPage() {
         {/* ページヘッダー */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "2rem" }}>
           <div style={{ width: 48, height: 48, borderRadius: 12, background: "rgba(124,109,250,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <BarChart2 size={24} color="var(--accent)" />
+            <IconReport size={24} style={{ color: "var(--accent)" }} />
           </div>
           <div>
             <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>AIレポート自動生成</h1>

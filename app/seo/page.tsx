@@ -5,8 +5,9 @@ import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
 import Footer from "../components/Footer";
 import PrivacyWarning from "../components/PrivacyWarning";
+import IconSeo from "../components/icons/IconSeo";
 import { recordToolUse } from "../lib/userData";
-import { Search, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function Page() {
   const [input, setInput] = useState("");
@@ -34,7 +35,7 @@ export default function Page() {
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "2rem" }}>
           <div style={{ width: 48, height: 48, borderRadius: 12, background: "#14b8a622", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Search size={24} color="#14b8a6" />
+            <IconSeo size={24} style={{ color: "#14b8a6" }} />
           </div>
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>SEOタイトル・見出し生成</h1>
         </div>

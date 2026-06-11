@@ -53,7 +53,7 @@ export default function RecentTools() {
                   border: `1px solid ${color}30`, display: "flex", alignItems: "center",
                   justifyContent: "center", flexShrink: 0,
                 }}>
-                  {Icon && <Icon size={18} color={color} />}
+                  {Icon && <Icon size={18} style={{ color }} />}
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <p style={{ fontSize: 14, fontWeight: 700, margin: 0, color: "var(--text)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>

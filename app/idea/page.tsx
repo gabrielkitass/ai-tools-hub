@@ -5,8 +5,9 @@ import AdBanner from "../components/AdBanner";
 import ToolMeta from "../components/ToolMeta";
 import Footer from "../components/Footer";
 import PrivacyWarning from "../components/PrivacyWarning";
+import IconIdea from "../components/icons/IconIdea";
 import { recordToolUse } from "../lib/userData";
-import { Lightbulb, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function Page() {
   const [input, setInput] = useState("");
@@ -34,7 +35,7 @@ export default function Page() {
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "2rem" }}>
           <div style={{ width: 48, height: 48, borderRadius: 12, background: "#ec489922", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Lightbulb size={24} color="#ec4899" />
+            <IconIdea size={24} style={{ color: "#ec4899" }} />
           </div>
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0 }}>アイデア出し</h1>
         </div>

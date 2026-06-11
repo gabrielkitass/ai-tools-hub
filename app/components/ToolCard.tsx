@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import { LucideIcon, ArrowRight, Star, Heart } from "lucide-react";
+import { ArrowRight, Star, Heart } from "lucide-react";
+import type { ComponentType } from "react";
+import type { IconProps } from "./icons/types";
 import { useUserData, isFavorite, toggleFavorite, getDisplayRating } from "../lib/userData";
 
 type ToolCardProps = {
   href: string;
-  icon: LucideIcon;
+  icon: ComponentType<IconProps>;
   title: string;
   description: string;
   badge?: string;
@@ -71,7 +73,7 @@ export default function ToolCard({ href, icon: Icon, title, description, badge, 
             justifyContent: "center",
             flexShrink: 0,
           }}>
-            <Icon size={21} color={color} />
+            <Icon size={21} style={{ color }} />
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             {badge && (
