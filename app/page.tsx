@@ -21,7 +21,7 @@ export default function Home() {
       <Nav />
 
       {/* Hero */}
-      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "6rem 1.5rem 4rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <section className="hero-section" style={{ maxWidth: 1100, margin: "0 auto", padding: "6rem 1.5rem 4rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
         {/* Glow blobs */}
         <div className="glow-blob" style={{ width: 600, height: 600, background: "var(--accent)", top: -200, left: "50%", transform: "translateX(-50%)", opacity: 0.12 }} />
         <div className="glow-blob" style={{ width: 300, height: 300, background: "#ec4899", top: 50, left: "10%", opacity: 0.08 }} />
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div style={{
+          <div className="hero-stats" style={{
             display: "inline-flex",
             gap: 0,
             background: "var(--bg2)",
@@ -264,7 +264,7 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40, marginBottom: "2.5rem" }}>
+          <div className="footer-cols" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40, marginBottom: "2.5rem" }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "0.75rem" }}>
                 <div style={{
